@@ -12,6 +12,7 @@
         if(password_verify($password, $result['Contrasena'])){
             session_start();
             $_SESSION['username'] = $username;
+            $_SESSION['id'] = $result['id'];
             header('Location: ../contactos.php');
         }
     }
