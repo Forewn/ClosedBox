@@ -58,8 +58,8 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Usuario</th>
-                    <th>Chatear</th>
-                    <th>Borrar chat</th>
+                    <th class="text-center">Chatear</th>
+                    <th class="text-center">Borrar chat</th>
                 </tr>
                 <tr></tr>
             </thead>
@@ -72,8 +72,8 @@
                     echo "<tr>";
                     echo "<td>".$row['Nombre']."</td>";
                     echo "<td>".$row['Usuario']."</td>";
-                    echo "<td class='text-center'><a href='chat.php' onclick='enviarID(".$row['id'].")' class='btn btn-outline-success'><i class='bi bi-box-arrow-in-right'></i></a></td>";
-                    echo "<td class='text-center'><a href='./php/deletechats.php' class='btn btn-outline-danger' onclick='enviarID(".$row['id'].")'><i class='bi bi-trash'></i></a></td>";
+                    echo "<td class='text-center pb-2'><a href='chat.php' onclick='enviarID(".$row['id'].")' class='btn btn-outline-success'><i class='bi bi-box-arrow-in-right'></i></a></td>";
+                    echo "<td class='text-center pb-2'><a href='./php/deletechats.php' class='btn btn-outline-danger' onclick='enviarID(".$row['id'].")'><i class='bi bi-trash'></i></a></td>";
                     echo "</tr>";
                 }
             ?>
