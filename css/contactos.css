@@ -1,0 +1,11 @@
+.contacto{
+    border: solid black 1px;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 40vw;
+    display: inline-block;
+}
+
+.contacto a{
+    text-decoration: none;
+}

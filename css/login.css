@@ -1,0 +1,27 @@
+body{
+    background-image: url(../img/black-wallpaper.jpeg);
+    background-size: cover;
+}
+
+#titulo{
+    margin: 0 auto;
+}
+
+#login-box{
+    background-color: rgba(34, 31, 31, 0.61);
+    width: fit-content;
+    border-radius: 25px;
+    padding: 5vw 20px;
+    margin-top: 30vh;
+    border: dashed 1px rgb(206, 206, 206);
+}
+
+input{
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#button{
+    margin-left: 80%;
+
+}
