@@ -15,7 +15,6 @@ function askServer(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    window.scrollTo(0, document.body.scrollHeight);
     setInterval(askServer, 500);
     document.getElementById('button').addEventListener('click', function(event){
         var chat_ID = document.querySelector('.mensajes').id;
