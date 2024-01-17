@@ -4,6 +4,7 @@
     $other = $_SESSION['other'];
     $sql = "SELECT * FROM usuarios WHERE id = $other";
     $result2 = mysqli_fetch_array(mysqli_query($conn, $sql));
+    $other_name = $result2['Nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +12,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $other_name; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/chat.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 <body>
     <div class="chat">
@@ -34,7 +36,7 @@
                 $sql = "SELECT * FROM usuarios WHERE Usuario = '$usuario';";
                 $result = mysqli_fetch_array(mysqli_query($conn, $sql));
                 $you = $_SESSION['id'];
-                $other_name = $result2['Nombre'];
+                
                 require "php/searchChat.php";
                 $id_chat = search_chat($conn, $you, $other);
 
