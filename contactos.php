@@ -16,7 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@1,9..40&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sweetalert2.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/sweetalert2.min.js"></script>
 </head>
 <body>
     <header class="sticky-top">
@@ -28,24 +30,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="php/logout.php">Salir</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <li class="nav-item" onclick="logoutModal()">
+                        <a class="nav-link" href="#!">Salir</a>
                         </li>
                     </ul>
                 </div>
@@ -73,26 +59,15 @@
                     echo "<td>".$row['Nombre']."</td>";
                     echo "<td>".$row['Usuario']."</td>";
                     echo "<td class='text-center pb-2'><a href='chat.php' onclick='enviarID(".$row['id'].")' class='btn btn-outline-success'><i class='bi bi-box-arrow-in-right'></i></a></td>";
-                    echo "<td class='text-center pb-2'><a href='./php/deletechats.php' class='btn btn-outline-danger' onclick='enviarID(".$row['id'].")'><i class='bi bi-trash'></i></a></td>";
+                    echo "<td class='text-center pb-2'><a href='#!' class='btn btn-outline-danger' onclick='openWarning(".$row['id'].")'><i class='bi bi-trash'></i></a></td>";
                     echo "</tr>";
                 }
             ?>
             </tbody>
         </table>
     </main>
-    <script>
-        function enviarID(ID){
-            request = new XMLHttpRequest();
-            request.open('POST', './php/company.php');
-            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            request.onload = function(){
-            var respuesta = request.responseText;
-            console.log(respuesta);
-            };
-            request.send("otherID="+ID);
-        }
-    </script>
     <footer></footer>
+    <script src="js/manageContacts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

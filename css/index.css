@@ -1,70 +1,11 @@
-.banner{
-    text-align: center;
-    padding: 30px 0;
-    min-height: 30vw;
-}
-
-.banner p{
-    color: rgb(175, 171, 171);
-    font-size: 20px;
-}
-
-.banner h1{
-    font-size: 40px;
-    font-weight: 600;
-}
-
-.btn{
-    color: black;
-    border-radius: 28px;
-    background-color: white;
-    font-size: 15px;
-    height: 40px;
-}
-
-#tecnologias{
-    background-color: rgb(31, 31, 31);
-    font-size: 20px;
-}
-
-#tecnologias h5{
-    font-size: 40px;
-}
-
-#tecnologias img{
-    border-radius: 5px;
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-#tecnologias ul{
-    list-style: none;
-    padding-left: 10px;
-}
-
-#tecnologias li{
-    background-color: rgb(90, 89, 89);
-    margin: 20px 0;
-    border-radius: 30px;
-    padding: 10px;
-}
-
-footer ul{
-    list-style: none;
-    padding-left: 0;
-    text-decoration: underline;
-    font-size: 20px;
-}
-
-.titulo_footer{
-    color: rgb(175, 171, 171);
-    font-size: 20px;;
-}
-
-.footer_seccion{
-    border-left: solid 1px rgb(63, 62, 62);
-}
-
-#creditos{
-    border-top: solid 1px rgb(51, 50, 50);
-    padding: 10px;
+iframe{
+    width: 100vw;
+    height: 100vh;
 }
