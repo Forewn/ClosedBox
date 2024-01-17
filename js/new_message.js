@@ -1,4 +1,5 @@
 function askServer(){
+    const audio = new Audio('./audio/mixkit-bubble-pop-up-alert-notification-2357.wav');
     var chat_ID = document.querySelector('.mensajes').id;
     var askRequest = new XMLHttpRequest();
     const chat = document.querySelector('.mensajes');
@@ -7,7 +8,11 @@ function askServer(){
     askRequest.onload = function(){
         var respuesta = askRequest.responseText;
         chat.insertAdjacentHTML('beforeend', respuesta);
+        if(respuesta!=""){
+            audio.play();
+        }
         window.scrollTo(0, document.body.scrollHeight);
+        
         console.log(respuesta);
     };
     askRequest.send("chat_id=" + chat_ID + "&other=" + window.other);
@@ -15,11 +20,12 @@ function askServer(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+    const input = document.getElementById('text-area');
     setInterval(askServer, 500);
     document.getElementById('button').addEventListener('click', function(event){
+        const audio = new Audio('./audio/mixkit-gaming-lock-2848.wav');
         var chat_ID = document.querySelector('.mensajes').id;
         event.preventDefault();
-        const input = document.getElementById('text-area');
         if(input.value != ""){
             var request = new XMLHttpRequest();
             const chat = document.querySelector('.mensajes');
@@ -29,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function(){
             request.onload = function(){
                 var respuesta = request.responseText;
                 chat.insertAdjacentHTML('beforeend', respuesta);
+                audio.play();
+                window.scrollTo(100, 200)
             };
             request.send("mensaje=" + mensaje + "&chat_id=" + chat_ID);
 
